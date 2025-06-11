@@ -1,5 +1,6 @@
 import React from 'react';
 import { Truck, Check, ArrowRight, Shield } from 'lucide-react';
+import { getSkipImageUrl, getDefaultSkipImage } from '../services/api';
 
 const SkipCard = ({
   skip,
@@ -11,7 +12,8 @@ const SkipCard = ({
   getSkipDescription
 }) => {
   const totalPrice = calculateTotalPrice(skip.price_before_vat, skip.vat);
-  const imageUrl = `https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${skip.size}-yarder-skip.jpg`;
+  const imageUrl = getSkipImageUrl(skip.size);
+
 
   return (
    <div
@@ -50,7 +52,7 @@ const SkipCard = ({
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter group-hover:brightness-125"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/default-skip.jpg";
+              e.target.src = getDefaultSkipImage();
             }}
           />
           <div className="absolute inset-x-0 bottom-0 flex justify-between items-end p-3 sm:p-4 z-20">
@@ -105,13 +107,14 @@ const SkipCard = ({
                 </div>
               </div>
               <button
-                className={`${isSelected
-                  ? 'bg-gradient-to-r from-primary-500 to-secondary-400 text-white'
-                  : 'bg-purple-100 dark:bg-purple-700 text-purple-500 dark:text-purple-300 group-hover:bg-gradient-to-r group-hover:from-primary-500 group-hover:to-secondary-400 group-hover:text-white'
-                } rounded-full p-3 sm:p-4 transition-all duration-500 shadow-xl hover:shadow-2xl`}
+                className={`rounded-full p-3 sm:p-4 transition-all duration-500 shadow-xl hover:shadow-2xl ${
+                  isSelected
+                    ? 'bg-gradient-to-r from-primary-500 to-secondary-400 text-white hover:from-primary-600 hover:to-secondary-500'
+                    : 'bg-white dark:bg-neutral-800 text-primary-500 dark:text-primary-300 hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-400 hover:text-white'
+                }`}
                 aria-label="Select skip"
               >
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 transform group-hover:translate-x-1" />
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 transform hover:translate-x-1" />
               </button>
             </div>
           </div>
