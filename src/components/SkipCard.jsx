@@ -71,7 +71,7 @@ const SkipCard = ({
         {/* Content */}
         <div className="p-4 sm:p-6 lg:p-8 flex-1 flex flex-col">
           <div className="mb-2 sm:mb-4">
-            <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-400 dark:from-primary-400 dark:to-secondary-300 group-hover:from-purple-600 group-hover:to-pink-500 transition-all duration-500">
+            <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight bg-clip-text dark:text-purple-50/90 md:text-transparent bg-gradient-to-r from-primary-600 to-secondary-400 dark:from-primary-400 dark:to-secondary-300 group-hover:from-purple-600 group-hover:to-pink-500 transition-all duration-500">
               {skip.size} Yard Skip
             </h3>
             <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm font-medium mt-1 sm:mt-2">
