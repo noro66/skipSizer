@@ -20,7 +20,7 @@ const SkipCard = ({
       onClick={() => onSelect(skip)}
       className={`relative w-full sm:w-80 md:w-96 lg:w-[24rem] cursor-pointer group perspective-1000 transform transition-all duration-500 ease-out
         ${isSelected
-          ? 'ring-4 ring-primary-500 ring-offset-6 shadow-2xl scale-[1.05]'
+          ? 'ring-4 ring-primary-500 ring-offset-2 sm:ring-offset-6 shadow-2xl scale-[1.05]'
           : 'hover:scale-[1.07] hover:-translate-y-2 hover:shadow-2xl hover:rotate-1'
         }
       `}
@@ -109,8 +109,8 @@ const SkipCard = ({
               <button
                 className={`rounded-full p-3 sm:p-4 transition-all duration-500 shadow-xl hover:shadow-2xl ${
                   isSelected
-                    ? 'bg-gradient-to-r from-primary-500 to-secondary-400 text-white hover:from-primary-600 hover:to-secondary-500'
-                    : 'bg-white dark:bg-neutral-800 text-primary-500 dark:text-primary-300 hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-400 hover:text-white'
+                    ? 'bg-gradient-to-r from-primary-500 to-secondary-400 text-purple-600 dark:text-white hover:from-primary-600 hover:to-secondary-500'
+                    : 'bg-white dark:bg-neutral-800 text-primary-500 dark:text-primary-300 hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-400 hover:text-purple-900  dark:hover:text-white'
                 }`}
                 aria-label="Select skip"
               >
