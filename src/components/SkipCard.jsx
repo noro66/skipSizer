@@ -56,7 +56,7 @@ const SkipCard = ({
             }}
           />
           <div className="absolute inset-x-0 bottom-0 flex justify-between items-end p-3 sm:p-4 z-20">
-            <span className="bg-white/90 dark:bg-purple-900/90 backdrop-blur-sm text-primary-600 dark:text-primary-400 text-xs sm:text-sm tracking-wider font-bold px-3 py-1.5 sm:px-5 sm:py-2 rounded-full shadow-lg">
+            <span className="bg-white/90 dark:bg-purple-900/90 dark:text-white/90 backdrop-blur-sm text-primary-600 dark:text-primary-400 text-xs sm:text-sm tracking-wider font-bold px-3 py-1.5 sm:px-5 sm:py-2 rounded-full shadow-lg">
               {skip.size} YARD
             </span>
             {skip.allows_heavy_waste && (
